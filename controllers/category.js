@@ -2,10 +2,12 @@ const Category = require("../models/category")
 const asyncErrorWrapper = require('../helpers/errors/errorWrapper')
 
 const getAllCategories = asyncErrorWrapper(async(req, res, next) =>{
-    let categories = await Category.find();
+    //let categories = await Category.find();
 
-    return res.status(200)
-    .json(categories);
+   // return res.status(200).json(categories);
+   return res
+    .status(200)
+    .json(res.advanceQueryResults);
 })
 
 const addCategory = asyncErrorWrapper(async(req, res, next) =>{
